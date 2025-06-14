@@ -61,9 +61,27 @@
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
 body {
-  color: var(--default-color);
-  background-color: var(--background-color);
+    color: var(--default-color);
+
+  /* Layer 1 = your SVG, Layer 2 = the gradient */
+  background-image:
+    url('../img/Circuit-BG.svg'),
+    linear-gradient(to right, #002529, #083c42);
+
+  /* don’t repeat either */
+  background-repeat: no-repeat, no-repeat;
+
+  /* center both layers */
+  background-position: right center, center center;
+
+  /* cover the viewport for both */
+  background-size: contain, cover;
+
+  /* keep them fixed in place */
+  background-attachment: fixed, fixed;
+
   font-family: var(--default-font);
+  margin: 0;
 }
 
 a {
@@ -155,7 +173,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 90px;
+  max-height: 70px;
   margin-right: 8px;
 }
 
@@ -618,6 +636,13 @@ section,
   .section {
     scroll-margin-top: 66px;
   }
+}
+
+/* Make all sections transparent so the body background shows through */
+section,
+.section,
+.section-bg {
+  background-color: transparent !important;
 }
 
 /*--------------------------------------------------------------
